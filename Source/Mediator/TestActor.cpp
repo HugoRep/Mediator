@@ -32,17 +32,16 @@ void ATestActor::Tick(float DeltaTime)
 
 }
 
-void ATestActor::Mediator_Implementation(const FString& EventType)
+void ATestActor::Mediator_Implementation(const UEventConstance EventType)
 {
-	FString eType = EventType;
-
-	if (EventType.Compare(*FString(EVENT_ATTACK)))
+	
+	switch (EventType)
 	{
-		
-	}
-	else if (EventType.Compare(*FString(EVENT_CHECK)))
-	{
-
+		case UEventConstance::ATTACK:
+			UE_LOG(LogTemp, Warning, TEXT("test"));
+		break;
+	default:
+		break;
 	}
 }
 

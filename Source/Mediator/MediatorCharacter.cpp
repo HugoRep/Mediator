@@ -84,9 +84,9 @@ void AMediatorCharacter::SetupPlayerInputComponent(class UInputComponent* Player
 
 void AMediatorCharacter::Attack()
 {
-
-	UProxy::GetInstance()->sendNotitycation(*FString(EVENT_ATTACK));
-	UProxy::GetInstance()->sendNotitycation(*FString(EVENT_CHECK));
+	UE_LOG(LogTemp, Warning, TEXT("Attack"));
+	UProxy::GetInstance()->sendNotitycation(UEventConstance::ATTACK);
+	//UProxy::GetInstance()->sendNotitycation(*FString(EVENT_CHECK));
 	
 }
 

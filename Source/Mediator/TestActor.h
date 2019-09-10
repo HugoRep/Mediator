@@ -28,5 +28,5 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	virtual void Mediator_Implementation(const FString& EventType) override;
+	virtual void Mediator_Implementation(const UEventConstance EventType) override;
 };

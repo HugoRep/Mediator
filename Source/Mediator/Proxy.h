@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
 #include "MediatorInterface.h"
+#include "EventConstance.h"
 #include "Proxy.generated.h"
 
 /**
@@ -22,6 +23,7 @@ public:
 	static UProxy* GetInstance() {
 		if (SingletonInstance == nullptr)
 			SingletonInstance = NewObject<UProxy>();
+			SingletonInstance->AddToRoot();
 		return SingletonInstance;
 	};
 	~UProxy()
@@ -40,15 +42,15 @@ public:
 	TArray<AActor*> ObjectArray;
 	void onRegister(AActor* object)
 	{
-		ObjectArray.Add(object);
+		ObjectArray.Emplace(object);
 		UE_LOG(LogTemp, Warning, TEXT("ObjectArray Max:%d %d"), ObjectArray.Max() , ObjectArray.Num());
 	}
 
-	void sendNotitycation(FString EventType)
+	void sendNotitycation(UEventConstance EventType)
 	{
 		for (int ix = 0; ix < ObjectArray.Num(); ++ix)
 		{
-			IMediatorInterface::Execute_Mediator((UObject*)ObjectArray[ix] , *EventType);
+			IMediatorInterface::Execute_Mediator((UObject*)ObjectArray[ix] , EventType);
 		}		
 	}
 };

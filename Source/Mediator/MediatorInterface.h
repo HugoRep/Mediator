@@ -23,5 +23,5 @@ class MEDIATOR_API IMediatorInterface
 	
 public:
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = Interact)
-	void Mediator(const FString& Message);
+	void Mediator(const UEventConstance Message);
 };
