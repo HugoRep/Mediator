@@ -3,7 +3,6 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
 #include "EventConstance.generated.h"
 
 /**
@@ -14,6 +13,5 @@ UENUM()
 enum class UEventConstance : uint8
 {
 	ATTACK		UMETA(DisplayName = "ATTACK"),
-	STOP		UMETA(DisplayName = "STOP"),
-	
+	STOP		UMETA(DisplayName = "STOP")
 };

@@ -26,24 +26,17 @@ public:
 			SingletonInstance->AddToRoot();
 		return SingletonInstance;
 	};
-	~UProxy()
-	{
+	~UProxy(){
 		Destory();
 	}
 
-	
-
-	void Destory()
-	{
+	void Destory(){
 		ObjectArray.Empty();
-		UE_LOG(LogTemp, Warning, TEXT("Destory out %d"), ObjectArray.Num());
 	}
 
 	TArray<AActor*> ObjectArray;
-	void onRegister(AActor* object)
-	{
+	void onRegister(AActor* object){
 		ObjectArray.Emplace(object);
-		UE_LOG(LogTemp, Warning, TEXT("ObjectArray Max:%d %d"), ObjectArray.Max() , ObjectArray.Num());
 	}
 
 	void sendNotitycation(UEventConstance EventType)

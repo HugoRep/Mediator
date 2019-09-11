@@ -19,9 +19,7 @@ class UMediatorInterface : public UInterface
 class MEDIATOR_API IMediatorInterface
 {
 	GENERATED_BODY()
-
-	
 public:
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = Interact)
-	void Mediator(const UEventConstance Message);
+	void Mediator(const UEventConstance eventType);
 };

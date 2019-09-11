@@ -22,7 +22,6 @@ void ATestActor::BeginPlay()
 {
 	Super::BeginPlay();
 	UProxy::GetInstance()->onRegister( this);
-	
 }
 
 // Called every frame
